@@ -20,13 +20,13 @@ public class ObjectClicker : MonoBehaviour
     private bool Looking = false;
     private bool isZoomed = false;
 
-    //public GameObject CurrentLookingObject;
+    private UIManager PlanetPanel;
     // private GameObject BaseLookingObject;
 
     private void Start()
     {
-        //PlanetPanel = GameObject.Find("Panel");
-        //PlanetPanel.SetActive(false);
+        PlanetPanel = GameObject.Find("Canvas").GetComponent<UIManager>();
+        
         Maintarget = target;
         // BaseLookingObject = CurrentLookingObject;
     }
@@ -41,11 +41,12 @@ public class ObjectClicker : MonoBehaviour
             {
                 if (hit.transform != null)//ouvrire UI
                 {
-                    //PlanetPanel.SetActive(true);
+                    
                     Looking = true;
                     PrintName(hit.transform.gameObject);
                     target = hit.transform.gameObject.GetComponent<Transform>();    //Recupérer le centre de la planète ciblée
                     isZoomed = true;
+                    PlanetPanel.PanelRecap(true);
                 }
             }
 
@@ -53,10 +54,11 @@ public class ObjectClicker : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))//ferme Ui
         {
-            //PlanetPanel.SetActive(false);
+            
             target = Maintarget;
             Looking = false;
             isZoomed = !isZoomed;
+            PlanetPanel.PanelRecap(false);
         }
     }
 
