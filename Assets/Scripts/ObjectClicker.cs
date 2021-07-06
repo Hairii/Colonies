@@ -8,7 +8,7 @@ public class ObjectClicker : MonoBehaviour
     private Transform Maintarget;
     private Transform Center;
 
-    private GameObject PlanetPanel;
+   // private GameObject PlanetPanel;
 
     float damping = 3.0f; // Vitesse de la cam
 
@@ -25,8 +25,8 @@ public class ObjectClicker : MonoBehaviour
 
     private void Start()
     {
-        PlanetPanel = GameObject.Find("Panel");
-        PlanetPanel.SetActive(false);
+        //PlanetPanel = GameObject.Find("Panel");
+        //PlanetPanel.SetActive(false);
         Maintarget = target;
         // BaseLookingObject = CurrentLookingObject;
     }
@@ -41,7 +41,7 @@ public class ObjectClicker : MonoBehaviour
             {
                 if (hit.transform != null)//ouvrire UI
                 {
-                    PlanetPanel.SetActive(true);
+                    //PlanetPanel.SetActive(true);
                     Looking = true;
                     PrintName(hit.transform.gameObject);
                     target = hit.transform.gameObject.GetComponent<Transform>();    //Recupérer le centre de la planète ciblée
@@ -53,7 +53,7 @@ public class ObjectClicker : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))//ferme Ui
         {
-            PlanetPanel.SetActive(false);
+            //PlanetPanel.SetActive(false);
             target = Maintarget;
             Looking = false;
             isZoomed = !isZoomed;
