@@ -36,18 +36,35 @@ public class UIManager : MonoBehaviour
     {
         if (PanelTrue == true)
             Object[2].SetActive(true);
+
         else
-            Object[2].SetActive(false);
+        Object[2].SetActive(false);
         Object[3].SetActive(false);
+        Object[4].SetActive(false);
+        Object[5].SetActive(false);
+        Object[6].SetActive(false);
 
     }
 
     public void Voyage()
     {
         Object[2].SetActive(false);
-        //falsePanel= false;
-        Object[3].SetActive(true);
-        // Object[5].SetActive(true);
+        Object[6].SetActive(true);
+        Object[3].SetActive(true); 
+         
+    }
+
+    public void Manuel()
+    {
+        
+        Object[4].SetActive(true);
+        Object[5].SetActive(false);
+    }
+
+    public void Automatique()
+    {
+        Object[5].SetActive(true);
+        Object[4].SetActive(false);
     }
 
     // Update is called once per frame
