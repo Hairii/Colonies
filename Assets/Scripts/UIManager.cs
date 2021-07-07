@@ -17,7 +17,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadSceneAsync("MainLevel");
+        
+
     }
 
     public void Scene1()
